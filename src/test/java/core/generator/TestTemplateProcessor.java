@@ -67,7 +67,9 @@ public class TestTemplateProcessor implements DataSourceType{
         //
         //
         // 这里写代码
-        //
+        //dsc = new DataSourceConfig();
+          PowerMockito.mockStatic(DataSourceConfig.class);
+          when(DataSourceConfig.newInstance()).thenReturn(dsc);
         //------------------------------------------------
 		//5. 重放所有的行为。
 		PowerMock.replayAll(dsc);
