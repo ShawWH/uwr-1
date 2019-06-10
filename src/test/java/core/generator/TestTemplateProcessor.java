@@ -67,7 +67,7 @@ public class TestTemplateProcessor implements DataSourceType{
         //
         //
         // 这里写代码
-        //dsc = new DataSourceConfig();
+          dsc = new DataSourceConfig();
           PowerMockito.mockStatic(DataSourceConfig.class);
           when(DataSourceConfig.newInstance()).thenReturn(dsc);
         //------------------------------------------------
