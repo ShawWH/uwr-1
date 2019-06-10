@@ -67,6 +67,10 @@ public class TestTemplateProcessor implements DataSourceType{
         //
         //
         // 这里写代码
+	  EasyMock.expectLastCall(mock.setDataSources(dss));
+          EasyMock.expect(mock.getConstDataSource()).andReturn((ConstDataSource)ds);
+          EasyMock.replayAll(mock);
+		
           dsc = new DataSourceConfig();
           PowerMockito.mockStatic(DataSourceConfig.class);
           when(DataSourceConfig.newInstance()).thenReturn(dsc);
